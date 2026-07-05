@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | AI API Hub 2026</title>
+  <style>
+    :root{--bg:#070b16;--text:#eef3ff;--muted:#a7b3d6;--primary:#7c5cff;--primary2:#00d4ff;--border:rgba(255,255,255,.08);--shadow:0 18px 60px rgba(0,0,0,.35)}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,sans-serif;background:linear-gradient(180deg,#060913 0%,#070b16 100%);color:var(--text)}
+    a{text-decoration:none;color:inherit}.container{max-width:1200px;margin:0 auto;padding:0 20px}
+    .header{position:sticky;top:0;z-index:100;backdrop-filter:blur(18px);background:rgba(7,11,22,.72);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900}.logo{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--primary),var(--primary2));box-shadow:0 10px 28px rgba(124,92,255,.28)}
+    .navlinks{display:flex;align-items:center;gap:18px;flex-wrap:wrap}.navlinks a{color:var(--muted);font-weight:600}.navlinks a:hover{color:#fff}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border:none;border-radius:14px;padding:12px 16px;font-weight:800;cursor:pointer;transition:.25s ease}.btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;box-shadow:var(--shadow)}
+    .btn-outline{background:transparent;color:#fff;border:1px solid var(--border)}
+    .section{padding:48px 0 78px}
+    .grid{display:grid;gap:18px}.layout{grid-template-columns:1fr .8fr}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow)}
+    .panel{padding:24px}
+    .field{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+    .field label{color:#dfe7ff;font-size:.92rem}
+    .field input,.field textarea,.field select{
+      background:rgba(255,255,255,.04);color:#fff;border:1px solid var(--border);border-radius:12px;padding:12px 14px;outline:none
+    }
+    .field textarea{min-height:140px;resize:vertical}
+    .notice{padding:16px;border-radius:18px;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.18);color:#d7f8ff;line-height:1.7}
+    .footer{padding:30px 0;border-top:1px solid rgba(255,255,255,.06);color:var(--muted)}
+    .mobile-toggle{display:none;background:transparent;border:1px solid var(--border);color:#fff;border-radius:12px;padding:10px 12px}
+    @media (max-width: 980px){.layout{grid-template-columns:1fr}.navlinks{display:none}.mobile-toggle{display:inline-flex}}
+  </style>
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="index.html"><div class="logo">AI</div><div><div>AI API Hub</div><small style="color:var(--muted)">Marketplace de APIs</small></div></a>
+      <nav class="navlinks" id="navlinks">
+        <a href="index.html">Inicio</a><a href="apis.html">APIs</a><a href="pricing.html">Precios</a><a href="dashboard.html">Dashboard</a><a href="contact.html">Contacto</a>
+      </nav>
+      <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="grid layout">
+      <div class="card panel">
+        <h1 style="margin-top:0;font-size:2.4rem">Contacto</h1>
+        <p style="color:var(--muted);line-height:1.7">
+          ¿Necesitas una versión con Stripe, login o backend? Escríbenos.
+        </p>
+
+        <form onsubmit="sendForm(event)">
+          <div class="field">
+            <label>Nombre</label>
+            <input type="text" id="name" placeholder="Tu nombre" required />
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input type="email" id="email" placeholder="correo@empresa.com" required />
+          </div>
+          <div class="field">
+            <label>Asunto</label>
+            <input type="text" id="subject" placeholder="Quiero una web de APIs de IA" required />
+          </div>
+          <div class="field">
+            <label>Mensaje</label>
+            <textarea id="message" placeholder="Cuéntanos lo que necesitas..." required></textarea>
+          </div>
+          <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">
+            <button class="btn btn-primary" type="submit">Enviar mensaje</button>
+            <a class="btn btn-outline" href="mailto:ventas@aiapihub.com">Email directo</a>
+          </div>
+        </form>
+      </div>
+
+      <aside class="card panel">
+        <h2 style="margin-top:0">Información</h2>
+        <div class="notice">
+          <strong>Ventas:</strong><br>
+          ventas@aiapihub.com
+          <br><br>
+          <strong>Soporte:</strong><br>
+          soporte@aiapihub.com
+        </div>
+
+        <div style="margin-top:18px;padding:16px;border-radius:18px;background:rgba(255,255,255,.03);border:1px solid var(--border);line-height:1.7">
+          <strong style="color:#fff">Servicios que podemos conectar:</strong><br>
+          Stripe, Clerk, PostgreSQL, panel admin, API keys, dashboard y proxy de IA.
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">© 2026 AI API Hub</div>
+</footer>
+
+<script>
+  function toggleMenu(){
+    const nav = document.getElementById('navlinks');
+    nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    nav.style.flexDirection = 'column';
+    nav.style.alignItems = 'flex-start';
+  }
+
+  function sendForm(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    alert(`Gracias, ${name}. Tu mensaje ha sido preparado para envío.`);
+    e.target.reset();
+  }
+</script>
+</body>
+</html>

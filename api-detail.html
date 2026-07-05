@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalle API | AI API Hub 2026</title>
+  <meta name="description" content="Detalle profesional de una API de IA con descripción, entradas, salidas, planes y ejemplo." />
+  <style>
+    :root{
+      --bg:#070b16;--card:#11182f;--text:#eef3ff;--muted:#a7b3d6;--primary:#7c5cff;--primary2:#00d4ff;--border:rgba(255,255,255,.08);--shadow:0 18px 60px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,sans-serif;background:linear-gradient(180deg,#060913 0%,#070b16 100%);color:var(--text)}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+    .header{position:sticky;top:0;z-index:100;backdrop-filter:blur(18px);background:rgba(7,11,22,.72);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900}
+    .logo{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--primary),var(--primary2));box-shadow:0 10px 28px rgba(124,92,255,.28)}
+    .navlinks{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+    .navlinks a{color:var(--muted);font-weight:600}.navlinks a:hover{color:#fff}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border:none;border-radius:14px;padding:12px 16px;font-weight:800;cursor:pointer;transition:.25s ease}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;box-shadow:var(--shadow)}
+    .btn-outline{background:transparent;color:#fff;border:1px solid var(--border)}
+    .section{padding:48px 0 78px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow)}
+    .grid{display:grid;gap:18px}
+    .layout{grid-template-columns:1.15fr .85fr}
+    .panel{padding:24px}
+    h1,h2,h3{margin-top:0}
+    p{color:var(--muted);line-height:1.7}
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:.78rem;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid var(--border);color:#d7def6}
+    .codebox{
+      background:#08111f;border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;padding:18px;overflow:auto;
+      font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+      font-size:.92rem;color:#d8e4ff
+    }
+    .table{width:100%;border-collapse:collapse}
+    .table th,.table td{text-align:left;padding:12px 10px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .table td{color:var(--muted)}
+    .footer{padding:30px 0;border-top:1px solid rgba(255,255,255,.06);color:var(--muted)}
+    .mobile-toggle{display:none;background:transparent;border:1px solid var(--border);color:#fff;border-radius:12px;padding:10px 12px}
+    @media (max-width: 980px){.layout{grid-template-columns:1fr}.navlinks{display:none}.mobile-toggle{display:inline-flex}}
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="nav">
+      <a class="brand" href="index.html"><div class="logo">AI</div><div><div>AI API Hub</div><small style="color:var(--muted)">Marketplace de APIs</small></div></a>
+      <nav class="navlinks" id="navlinks">
+        <a href="index.html">Inicio</a><a href="apis.html">APIs</a><a href="pricing.html">Precios</a><a href="dashboard.html">Dashboard</a><a href="contact.html">Contacto</a>
+      </nav>
+      <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="grid layout">
+      <div class="card panel">
+        <span style="display:inline-flex;padding:6px 10px;border-radius:999px;background:rgba(124,92,255,.14);border:1px solid rgba(124,92,255,.22);font-size:.78rem">NLP</span>
+        <h1 style="font-size:2.7rem">Text Generation API</h1>
+        <p>
+          API orientada a la generación de texto original a partir de prompts. Ideal para asistentes virtuales,
+          automatización de contenido, soporte al cliente, copywriting y flujos de trabajo con IA.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Texto</span><span class="tag">Chat</span><span class="tag">Prompts</span><span class="tag">Instrucciones</span>
+        </div>
+
+        <h2 style="margin-top:28px">Funcionalidad</h2>
+        <p>
+          Recibe una instrucción en lenguaje natural y devuelve texto coherente, contextual y adaptado al tono solicitado.
+        </p>
+
+        <h2>Entradas requeridas</h2>
+        <div class="codebox">
+<pre>{
+  "prompt": "Redacta una descripción de producto",
+  "language": "es",
+  "temperature": 0.7,
+  "max_tokens": 120
+}</pre>
+        </div>
+
+        <h2 style="margin-top:24px">Salida esperada</h2>
+        <div class="codebox">
+<pre>{
+  "generated_text": "Descripción creada por la IA...",
+  "usage": {
+    "input_tokens": 18,
+    "output_tokens": 42
+  },
+  "request_id": "tg_00192"
+}</pre>
+        </div>
+
+        <h2 style="margin-top:24px">Planes disponibles</h2>
+        <table class="table">
+          <thead>
+            <tr><th>Plan</th><th>Límite</th><th>Precio</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Starter</td><td>1,000 requests/mes</td><td>$19/mes</td></tr>
+            <tr><td>Pro</td><td>10,000 requests/mes</td><td>$79/mes</td></tr>
+            <tr><td>Enterprise</td><td>Personalizado</td><td>Custom</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <aside class="card panel">
+        <h2>Resumen</h2>
+        <p><strong style="color:#fff">Proveedor:</strong> OpenAI Compatible</p>
+        <p><strong style="color:#fff">Endpoint:</strong> /api/v1/text/generate</p>
+        <p><strong style="color:#fff">Auth:</strong> Bearer API Key</p>
+
+        <div style="margin-top:18px;padding:16px;border-radius:18px;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.18);color:#d7f8ff;line-height:1.7">
+          <strong>Casos de uso:</strong><br>
+          Chatbots, asistentes, generación de emails, blogs, resúmenes y automatización.
+        </div>
+
+        <div style="margin-top:18px;display:grid;gap:12px">
+          <button class="btn btn-primary" onclick="alert('Demo: aquí conectarías el checkout real')">Comprar ahora</button>
+          <a class="btn btn-outline" href="apis.html">Volver al catálogo</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">© 2026 AI API Hub</div>
+</footer>
+
+<script>
+  function toggleMenu(){
+    const nav = document.getElementById('navlinks');
+    nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    nav.style.flexDirection = 'column';
+    nav.style.alignItems = 'flex-start';
+  }
+</script>
+</body>
+</html>
